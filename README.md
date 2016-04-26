@@ -1,4 +1,4 @@
-# tech404.io
+# techmunich.io
 
 ## Development
 
