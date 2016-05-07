@@ -1,0 +1,7 @@
+# Site settings
+title: techmunich
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://techmunich.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
