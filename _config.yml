@@ -5,3 +5,6 @@ url: "http://techmunich.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+
+# GH Metadata Settings
+repository: techmunich/techmunich.io
