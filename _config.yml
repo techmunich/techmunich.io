@@ -4,11 +4,7 @@ title: techmunich
 # Build settings
 markdown: kramdown
 
-# GH Metadata Settings
-repository: techmunich/techmunich.io
-
 # Gems
 gems:
- - jekyll-github-metadata
  - jekyll-assets
  - octopress-autoprefixer
