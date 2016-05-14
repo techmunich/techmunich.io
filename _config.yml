@@ -1,6 +1,5 @@
 # Site settings
 title: techmunich
-url: "http://www.techmunich.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
