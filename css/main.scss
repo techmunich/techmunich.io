@@ -1,8 +1,7 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@import "mixins";
-
+@charset "utf-8";
 
 $background-color: #F8A434;
 $highlight-color: #E86C8D;
@@ -12,8 +11,7 @@ $link-color: darken($highlight-color,40%);
 $link-hover-color: lighten($link-color,10%);
 $border-color: darken($background-color,30%);
 $footer-text-size: .9em;
-
-@charset "utf-8";
+$breakpoint: 600px;
 
 body {
   background: $background-color;
@@ -22,10 +20,13 @@ body {
   font-size: $body-text-size;
   line-height: 1.35em;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   color: $link-color;
+
   &:hover {
     color: $link-hover-color;
   }
@@ -39,27 +40,38 @@ header .site-title {
   text-decoration: none;
 }
 
-
-
 section, form, footer {
-  width: 600px;
   margin: auto;
   text-align: left;
 }
 
+.content-block {
+	display: block;
+	margin-left: .5rem;
+	margin-right: .5rem;
 
-/**
- * The main form and info
- */
+	@media (min-width: $breakpoint) {
+		margin-left: auto;
+		margin-right: auto;
+		width: $breakpoint;
+	}
+}
+
+
+.description {
+	letter-spacing: 1px;
+	line-height: 1.3em;
+}
+
  form {
-  .description {
-    letter-spacing: 1px;
-    line-height: 1.3em;
-  }
-
   .input {
-    display: flex;
+	display: flex;
     align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint) {
+		flex-direction: row;
+	}
   }
 
   .button {
@@ -68,28 +80,39 @@ section, form, footer {
   }
 
   #email {
-    width: 75%;
+	display: block;
     background: #FDFCFB;
     font-family: inherit;
     font-size: 18px;
     color: #737373;
     letter-spacing: 1px;
     text-indent: 5%;
-    border-radius: 5px 0 0 5px;
+	width: 100%;
+
+	@media (min-width: $breakpoint) {
+    	border-radius: 5px 0 0 5px;
+    	width: 75%;
+	}
   }
 
   #submit {
-    width: 24%;
-    height: 46px;
     background: $highlight-color;
+    color: inherit;
+    cursor: pointer;
     font-family: inherit;
     font-size: 18px;
     font-weight: bold;
-    color: inherit;
+    height: 46px;
     letter-spacing: 1px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
+	margin-top: .5rem;
     transition: background .3s ease-in-out;
+	width: 100%;
+
+	@media (min-width: $breakpoint) {
+    	border-radius: 0 5px 5px 0;
+		margin-top: 0;
+    	width: 24%;
+	}
   }
 
   #submit:hover {
@@ -109,13 +132,16 @@ section, form, footer {
  footer {
   border-top:1px solid $border-color;
   margin:2em auto;
+
   p {
     font-size: .9em;
     line-height: 1.35em;
   }
+
   li {
     font-size: .85em;
   }
+
   .footer-nav {
     border-top:1px solid $border-color;
     margin-top:1em;
@@ -126,13 +152,22 @@ section, form, footer {
   }
 }
 
-/* Utility */
 .flash-message {
-  @include border-radius(5px);
+  border-radius: 5px;
   background-color:$highlight-color;
-  display: none;
-  margin:2em 0;
-  padding:1em;
-}
+  bottom: 1rem;
+  opacity: 0;
+  padding: .5rem;
+  pointer-events: none;
+  position: fixed;
+  width: 90%;
 
-/** that's all, folks **/
+  @media (min-width: $breakpoint) {
+	  width: $breakpoint;
+  }
+
+  &.shown {
+  	transition: opacity 1s ease-in-out;
+	opacity: 1;
+  }
+}
