@@ -3,46 +3,57 @@
 ---
 @charset "utf-8";
 
-$background-color: #F8A434;
-$highlight-color: #E86C8D;
-$body-text-color: #FDFCFB;
-$body-text-size: 20px;
+$background-color: #fff;
+$highlight-color: #c20000;
+$body-text-color: #000;
+$input-text-color: #737373;
+
 $link-color: darken($highlight-color,40%);
 $link-hover-color: lighten($link-color,10%);
 $border-color: darken($background-color,30%);
-$footer-text-size: .9em;
+$button-color: lighten($highlight-color, 10%);
+
+$body-text-size: 20px;
+$footer-text-size: .9rem;
+
+$input-height: 2.5rem;
+
 $breakpoint: 600px;
 
+* {
+	box-sizing: border-box;
+}
+
 body {
-  background: $background-color;
-  color: $body-text-color;
-  font-family: 'Lato', sans-serif;
-  font-size: $body-text-size;
-  line-height: 1.35em;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+	background-color: $background-color;
+	color: $body-text-color;
+	font-family: 'Lato', sans-serif;
+	font-size: $body-text-size;
+	line-height: 1.35em;
+	text-align: center;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-  color: $link-color;
+	color: $link-color;
 
-  &:hover {
-    color: $link-hover-color;
-  }
+	&:hover {
+		color: $link-hover-color;
+	}
 }
 
-header .site-title {
-  color: $body-text-color;
-  font-size: 5em;
-  font-weight: bold;
-  line-height: 1em;
-  text-decoration: none;
+.site-title {
+	color: $body-text-color;
+	font-size: 5em;
+	font-weight: bold;
+	line-height: 1em;
+	text-decoration: none;
 }
 
 section, form, footer {
-  margin: auto;
-  text-align: left;
+	margin: auto;
+	text-align: left;
 }
 
 .content-block {
@@ -63,111 +74,112 @@ section, form, footer {
 	line-height: 1.3em;
 }
 
- form {
-  .input {
-	display: flex;
-    align-items: center;
-    flex-direction: column;
 
-    @media (min-width: $breakpoint) {
+.input {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	@media (min-width: $breakpoint) {
 		flex-direction: row;
 	}
-  }
+}
 
-  .button {
-    height: 44px;
-    border: none;
-  }
+.button {
+	height: 44px;
+	border: none;
+}
 
-  #email {
+#email {
 	display: block;
-    background: #FDFCFB;
-    font-family: inherit;
-    font-size: 18px;
-    color: #737373;
-    letter-spacing: 1px;
-    text-indent: 5%;
+	font-family: inherit;
+	font-size: 18px;
+	color: $input-text-color;
+	height: $input-height;
+	letter-spacing: 1px;
+	text-indent: 5%;
 	width: 100%;
+	border: 2px solid $highlight-color;
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
 
 	@media (min-width: $breakpoint) {
-    	border-radius: 5px 0 0 5px;
-    	width: 75%;
+		border-radius: 5px 0 0 5px;
+		width: 75%;
 	}
-  }
+}
 
-  #submit {
-    background: $highlight-color;
-    color: inherit;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 18px;
-    font-weight: bold;
-    height: 46px;
-    letter-spacing: 1px;
+#submit {
+	background: $highlight-color;
+	border: 2px solid $highlight-color;
+	color: inherit;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 18px;
+	font-weight: bold;
+	height: $input-height;
+	letter-spacing: 1px;
 	margin-top: .5rem;
-    transition: background .3s ease-in-out;
+	transition: background .3s ease-in-out;
 	width: 100%;
 
-	@media (min-width: $breakpoint) {
-    	border-radius: 0 5px 5px 0;
-		margin-top: 0;
-    	width: 24%;
+	&:hover {
+		background: $highlight-color;
 	}
-  }
 
-  #submit:hover {
-    background: #d45d7d;
-  }
-
-  input:focus {
-    outline: none;
-    outline: 2px solid #E86C8D;
-    box-shadow: 0 0 2px #E86C8D;
-  }
+	@media (min-width: $breakpoint) {
+		border-radius: 0 5px 5px 0;
+		margin-top: 0;
+		width: 24%;
+	}
 }
 
 /**
- * Footer Section
- */
- footer {
-  border-top:1px solid $border-color;
-  margin:2em auto;
+* Footer Section
+*/
+footer {
+	border-top: 1px solid $border-color;
+	margin: 2em auto;
 
-  p {
-    font-size: .9em;
-    line-height: 1.35em;
-  }
+	p {
+		font-size: .9em;
+		line-height: 1.35em;
+	}
 
-  li {
-    font-size: .85em;
-  }
+	li {
+		font-size: .85em;
+	}
 
-  .footer-nav {
-    border-top:1px solid $border-color;
-    margin-top:1em;
-    padding:1em 0;
-    a {
-      font-size: .7em;
-    }
-  }
+	.footer-nav {
+		border-top: 1px solid $border-color;
+		margin-top: 1em;
+		padding: 1em 0;
+
+		a {
+			font-size: .7em;
+		}
+	}
 }
 
 .flash-message {
-  border-radius: 5px;
-  background-color:$highlight-color;
-  bottom: 1rem;
-  opacity: 0;
-  padding: .5rem;
-  pointer-events: none;
-  position: fixed;
-  width: 90%;
+	border-radius: 5px;
+	background-color: $highlight-color;
+	bottom: 1rem;
+	opacity: 0;
+	padding: .5rem;
+	pointer-events: none;
+	position: fixed;
+	width: 90%;
 
-  @media (min-width: $breakpoint) {
-	  width: $breakpoint;
-  }
+	@media (min-width: $breakpoint) {
+		width: $breakpoint;
+	}
 
-  &.shown {
-  	transition: opacity 1s ease-in-out;
-	opacity: 1;
-  }
+	&.shown {
+		transition: opacity 1s ease-in-out;
+		opacity: 1;
+	}
 }
