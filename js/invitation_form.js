@@ -14,6 +14,10 @@
 		notificationFail.classList.remove(NOTIFICATION_VISIBILITY_CLASS);
 	}
 
+	function delayedHide() {
+		setTimeout(restoreViews, 2000);
+	}
+
 	invitationForm.addEventListener('submit', function (event) {
 		event.preventDefault();
 
@@ -33,11 +37,13 @@
 				notificationFail.classList.add(NOTIFICATION_VISIBILITY_CLASS);
 			}
 			invitationForm.disabled = false;
+			delayedHide();
 		};
 
 		request.onerror = function () {
 			notificationFail.classList.add(NOTIFICATION_VISIBILITY_CLASS);
 			invitationForm.disabled = false;
+			delayedHide();
 		};
 
 		invitationForm.disabled = true;
