@@ -1,0 +1,8 @@
+# Browsers that we support
+IE > 9
+firefox >= 38
+chrome >= 36
+last 2 opera versions
+safari >= 8
+ios >= 8
+Edge
