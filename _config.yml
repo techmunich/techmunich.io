@@ -1,6 +1,6 @@
 # Site settings
 title: techmunich
-url: "http://techmunich.io" # the base hostname & protocol for your site
+url: "http://www.techmunich.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
@@ -9,4 +9,7 @@ markdown: kramdown
 repository: techmunich/techmunich.io
 
 # Gems
-gems: ['jekyll-github-metadata']
+gems:
+ - jekyll-github-metadata
+ - jekyll-assets
+ - octopress-autoprefixer
