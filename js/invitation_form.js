@@ -15,7 +15,7 @@
 	}
 
 	function delayedHide() {
-		setTimeout(restoreViews, 2000);
+		setTimeout(restoreViews, 5000);
 	}
 
 	invitationForm.addEventListener('submit', function (event) {
