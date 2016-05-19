@@ -94,6 +94,7 @@ input {
 	background: $highlight-color;
 	border: 2px solid $highlight-color;
 	height: 44px;
+	-webkit-appearance: none;
 }
 
 #email {
