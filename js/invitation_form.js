@@ -50,6 +50,6 @@
 
 		invitationForm.disabled = true;
 
-		request.send(encodedParams);
+		request.send(JSON.stringify(encodedParams));
 	});
 })();
