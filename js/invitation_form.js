@@ -24,11 +24,8 @@
 		restoreViews();
 
 		var request = new XMLHttpRequest();
-		var mail = invitationForm.elements[mailFormElementIdentifier].value;
 		var params = {
-			invitation: {
-				email: mail
-			}
+			email: invitationForm.elements[mailFormElementIdentifier].value
 		};
 
 		request.open('POST', INVITER_URL, true);
