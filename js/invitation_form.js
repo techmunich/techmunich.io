@@ -25,8 +25,10 @@
 
 		var request = new XMLHttpRequest();
 		var mail = invitationForm.elements[mailFormElementIdentifier].value;
-		var encodedParams = {
-			email: mail
+		var params = {
+			invitation: {
+				email: mail
+			}
 		};
 
 		request.open('POST', INVITER_URL, true);
@@ -49,6 +51,6 @@
 
 		invitationForm.disabled = true;
 
-		request.send(JSON.stringify(encodedParams));
+		request.send(JSON.stringify(params));
 	});
 })();
