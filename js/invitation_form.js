@@ -25,9 +25,8 @@
 
 		var request = new XMLHttpRequest();
 		var mail = invitationForm.elements[mailFormElementIdentifier].value;
-		var encodedMail = encodeURIComponent(mail);
 		var encodedParams = {
-			email: encodeURIComponent(mailFormElementIdentifier)
+			email: mail
 		};
 
 		request.open('POST', INVITER_URL, true);
