@@ -26,10 +26,12 @@
 		var request = new XMLHttpRequest();
 		var mail = invitationForm.elements[mailFormElementIdentifier].value;
 		var encodedMail = encodeURIComponent(mail);
-		var encodedIdentifier = encodeURIComponent(mailFormElementIdentifier);
-		var encodedParams = encodedIdentifier + "=" + encodedMail;
+		var encodedParams = {
+			email: encodeURIComponent(mailFormElementIdentifier)
+		};
 
 		request.open('POST', INVITER_URL, true);
+		request.setRequestHeader('Content-Type', 'application/json');
 		request.onload = function () {
 			if (request.status >= 200 && request.status < 400) {
 				notificationSuccess.classList.add(NOTIFICATION_VISIBILITY_CLASS);
