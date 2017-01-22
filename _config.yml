@@ -1,5 +1,6 @@
 # Site settings
 title: techmunich
+description: techmunich is a group of chat channels for developers, designers, marketers, business people, hobbyists, students, communities and other professionals involved in technology in the Munich area.
 
 # Build settings
 markdown: kramdown
