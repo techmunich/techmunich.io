@@ -1,6 +1,6 @@
 # Site settings
-title: techmunich
-description: techmunich is a group of chat channels for developers, designers, marketers, business people, hobbyists, students, communities and other professionals involved in technology in the Munich area.
+title: Technology communities in Munich for developers, designers, hacker, students - techmunich
+description: techmunich is a group of chat channels for developers, designers, hacker, marketers, business people, hobbyists, students, communities and other professionals involved in technology in the Munich area.
 
 # Build settings
 markdown: kramdown
